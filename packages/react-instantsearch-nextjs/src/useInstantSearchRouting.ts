@@ -54,7 +54,8 @@ export function useInstantSearchRouting<
       if (this.isDisposed) {
         return;
       }
-      router.push(url, { scroll: false });
+
+      window.history.pushState(null, '', url);
     };
     browserHistoryOptions.start = function start(onUpdate) {
       onUpdateRef.current = onUpdate;
